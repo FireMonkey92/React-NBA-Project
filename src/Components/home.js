@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 // components
-import Featured from './Featured'
+import Featured from './Featured';
+import Subscription from './subscription';
+
+
 
 const API_URL_HOME = "http://localhost:3004/home";
 
@@ -31,6 +34,7 @@ class Home extends Component {
         return (
             <div>
                 <Featured Slides={this.state.home.slider}></Featured>
+                <Subscription></Subscription>
             </div>
         )
     }
