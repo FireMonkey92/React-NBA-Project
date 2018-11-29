@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-
-
 // components
-import Features from './features'
+import Featured from './Featured'
 
 const API_URL_HOME = "http://localhost:3004/home";
 
@@ -22,20 +20,18 @@ class Home extends Component {
         })
         .then(responce => responce.json())
         .then(json => {
-                console.log(json);
+                //console.log(json);
                 this.setState({
                     home: json
                 });
             }
         );
-        
     }
     render() {
         return (
             <div>
-                <Features sliderData={this.state.home.slider}></Features>
+                <Featured Slides={this.state.home.slider}></Featured>
             </div>
-
         )
     }
 }
