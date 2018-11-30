@@ -4,20 +4,17 @@ import Featured from './Featured';
 import Subscription from './subscription';
 
 
-
 const API_URL_HOME = "http://localhost:3004/home";
 
 class Home extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
             home: ''
         }
     }
 
     componentDidMount() {
-
         fetch(API_URL_HOME, {
             method: 'GET'
         })
@@ -28,7 +25,7 @@ class Home extends Component {
                     home: json
                 });
             }
-        );
+        ).catch(err => new FetchError(err));
     }
     render() {
         return (
@@ -39,5 +36,16 @@ class Home extends Component {
         )
     }
 }
-
 export default Home;
+
+
+// Class that handles the error on Fetch Statement
+export class FetchError extends Error {
+    constructor(orig){
+        super(orig);
+        this.message = "Fetch Error";
+        // this.details = orig;
+        console.log(this.message + " " + orig);
+    }
+}
+
