@@ -10,7 +10,8 @@ export default class Subscription extends Component {
         this.state = {
             email: '',
             error: false,
-            success: false
+            success: false,
+            isduplicate: true
         }
     }
 
@@ -27,7 +28,7 @@ export default class Subscription extends Component {
 
 
     clearMessages = () => {
-        
+
         //without ES6
         // setTimeout(function () {
         //     this.setState({
@@ -45,14 +46,46 @@ export default class Subscription extends Component {
         }, 4000);
     }
 
+
+    checkIsDuplicate = (e) => {
+        //debugger
+        var ar = [];
+        fetch(URl_Email, {
+            method: 'GET'
+        }).then(res => res.json())
+            .then((json) => {
+                json.map((item) => {
+                    ar.push(item.email);
+                })
+                if (ar.indexOf(e) === -1) {
+                    this.setState({
+                        isduplicate: false
+                    })
+                }
+                else if(ar.indexOf(e) >= 0)  {
+                    this.setState({
+                        isduplicate: true
+                    })
+                }
+            })
+    }
+
+
     handleSubmitEvent = (event) => {
+
         // debugger        
         event.preventDefault();
         let email = this.state.email;
         let regex = /\S+@\S+\.\S+/;
-
+        //function to set state of isduplicate
         if (regex.test(email)) {
-            this.saveSubscription(email);
+            this.checkIsDuplicate(email);
+            if (this.state.isduplicate) {
+                console.log('Please Enter Uniqe Email Address');
+            } else {
+                console.log('Unique')
+                this.saveSubscription(email);
+            }
 
         }
         else {
@@ -60,8 +93,6 @@ export default class Subscription extends Component {
                 error: true
             })
         }
-
-
         this.clearMessages();
 
     }
@@ -78,7 +109,8 @@ export default class Subscription extends Component {
             .then(() => {
                 this.setState({
                     email: '',
-                    success: true
+                    success: true,
+                    isduplicate: false
                 });
             })
     }
@@ -90,7 +122,7 @@ export default class Subscription extends Component {
                 <div>
                     <form onSubmit={this.handleSubmitEvent}>
                         <input type='text' placeholder="yourEmail@email.com" value={this.state.email}
-                            onChange={e => this.catchOnChangeInput(e)} />
+                            onChange={e => this.catchOnChangeInput(e)  } />
 
                         <div className={this.state.error ? 'error show' : 'error'}>Check Your Email Address</div>
                         <div className={this.state.success ? 'success show' : 'success'}>Thank You</div>
@@ -104,5 +136,16 @@ export default class Subscription extends Component {
 
             </div>
         )
+    }
+}
+
+
+// Class that handles the error on Fetch Statement
+export class FetchError extends Error {
+    constructor(orig) {
+        super(orig);
+        this.message = "Fetch Error";
+        // this.details = orig;
+        console.log(this.message + " " + orig);
     }
 }
