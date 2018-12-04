@@ -11,8 +11,21 @@ export default class Subscription extends Component {
             email: '',
             error: false,
             success: false,
-            isduplicate: true
+            isduplicate: false,
+            prevEmails: []
         }
+    }
+    componentWillMount() {
+        //debugger
+        var ar = [];
+        fetch(URl_Email, {
+            method: 'GET'
+        }).then(res => res.json())
+            .then((json) => {
+                this.setState({
+                    prevEmails: json
+                })
+            })
     }
 
 
@@ -28,7 +41,6 @@ export default class Subscription extends Component {
 
 
     clearMessages = () => {
-
         //without ES6
         // setTimeout(function () {
         //     this.setState({
@@ -41,7 +53,8 @@ export default class Subscription extends Component {
         setTimeout(() => {
             this.setState({
                 error: false,
-                success: false
+                success: false,
+                isduplicate: false
             })
         }, 4000);
     }
@@ -49,44 +62,41 @@ export default class Subscription extends Component {
 
     checkIsDuplicate = (e) => {
         //debugger
-        var ar = [];
-        fetch(URl_Email, {
-            method: 'GET'
-        }).then(res => res.json())
-            .then((json) => {
-                json.map((item) => {
-                    ar.push(item.email);
-                })
-                if (ar.indexOf(e) === -1) {
-                    this.setState({
-                        isduplicate: false
-                    })
-                }
-                else if(ar.indexOf(e) >= 0)  {
-                    this.setState({
-                        isduplicate: true
-                    })
-                }
-            })
+        var data = [];
+        var prevEmails = this.state.prevEmails
+        console.log(prevEmails);
+
+        prevEmails.map((item) => {
+            data.push(item.email);
+        });
+
+        if (data.indexOf(e) === -1) {
+            this.setState({
+                isduplicate : false
+            });
+            return false
+        }
+        else if (data.indexOf(e) >= 0) {
+            this.setState({
+                isduplicate : true
+            });
+            return true
+        }
     }
-
-
     handleSubmitEvent = (event) => {
-
-        // debugger        
+        //debugger
         event.preventDefault();
         let email = this.state.email;
         let regex = /\S+@\S+\.\S+/;
+        
         //function to set state of isduplicate
         if (regex.test(email)) {
-            this.checkIsDuplicate(email);
-            if (this.state.isduplicate) {
+            if (this.checkIsDuplicate(email)) {
                 console.log('Please Enter Uniqe Email Address');
             } else {
                 console.log('Unique')
                 this.saveSubscription(email);
             }
-
         }
         else {
             this.setState({
@@ -94,7 +104,6 @@ export default class Subscription extends Component {
             })
         }
         this.clearMessages();
-
     }
 
     saveSubscription = (email) => {
@@ -114,7 +123,6 @@ export default class Subscription extends Component {
                 });
             })
     }
-
     render() {
         return (
             <div className="subscribe_panel">
@@ -122,10 +130,11 @@ export default class Subscription extends Component {
                 <div>
                     <form onSubmit={this.handleSubmitEvent}>
                         <input type='text' placeholder="yourEmail@email.com" value={this.state.email}
-                            onChange={e => this.catchOnChangeInput(e)  } />
-
+                            onChange={e => this.catchOnChangeInput(e)} />
                         <div className={this.state.error ? 'error show' : 'error'}>Check Your Email Address</div>
                         <div className={this.state.success ? 'success show' : 'success'}>Thank You</div>
+                        <div className={this.state.isduplicate ? 'subscribed show' : 'subscribed'}>This Email Address is already subscribed </div>
+                        
                     </form>
 
                 </div>
@@ -138,7 +147,6 @@ export default class Subscription extends Component {
         )
     }
 }
-
 
 // Class that handles the error on Fetch Statement
 export class FetchError extends Error {

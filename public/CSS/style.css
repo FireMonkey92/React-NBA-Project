@@ -131,16 +131,23 @@ footer{
     margin: auto;
 }
 
-.subscribe_panel .error{
+.subscribe_panel .error {
     color: #f44336;
     display: none;
 }
-.subscribe_panel .success{
+
+.subscribe_panel .subscribed{
+    color: #f44336;
+    display: none;
+}
+.subscribe_panel .success{ 
     display: none;
     color: #4caf50;
 }
 
 .subscribe_panel .error.show,
-.subscribe_panel .success.show{
+.subscribe_panel .success.show,
+.subscribe_panel .subscribed.show
+{
     display: block;
 }
