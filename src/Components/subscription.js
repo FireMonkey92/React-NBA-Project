@@ -17,7 +17,6 @@ export default class Subscription extends Component {
     }
     componentWillMount() {
         //debugger
-        var ar = [];
         fetch(URl_Email, {
             method: 'GET'
         }).then(res => res.json())
@@ -72,13 +71,13 @@ export default class Subscription extends Component {
 
         if (data.indexOf(e) === -1) {
             this.setState({
-                isduplicate : false
+                isduplicate: false
             });
             return false
         }
         else if (data.indexOf(e) >= 0) {
             this.setState({
-                isduplicate : true
+                isduplicate: true
             });
             return true
         }
@@ -88,7 +87,7 @@ export default class Subscription extends Component {
         event.preventDefault();
         let email = this.state.email;
         let regex = /\S+@\S+\.\S+/;
-        
+
         //function to set state of isduplicate
         if (regex.test(email)) {
             if (this.checkIsDuplicate(email)) {
@@ -134,7 +133,7 @@ export default class Subscription extends Component {
                         <div className={this.state.error ? 'error show' : 'error'}>Check Your Email Address</div>
                         <div className={this.state.success ? 'success show' : 'success'}>Thank You</div>
                         <div className={this.state.isduplicate ? 'subscribed show' : 'subscribed'}>This Email Address is already subscribed </div>
-                        
+
                     </form>
 
                 </div>

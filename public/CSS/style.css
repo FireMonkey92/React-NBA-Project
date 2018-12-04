@@ -126,7 +126,7 @@ footer{
 }
 .subscribe_panel small{
     width: 50%;
-    font-size: 10px;
+    font-size: 13px;
     line-height: 0px;
     margin: auto;
 }
@@ -150,4 +150,79 @@ footer{
 .subscribe_panel .subscribed.show
 {
     display: block;
+}
+
+/*=============================================
+                Blockes Panel CSS
+==============================================*/
+.home_blocks{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+.home_blocks .item {
+    flex-grow: 1;
+    position: relative;
+    height: 270px;
+    overflow: hidden;
+}
+.home_blocks .item.lg{
+    width: 50%;
+}
+.home_blocks .item.md{
+    width: 30%;
+}
+.home_blocks .item.sm{
+    width: 20%; 
+}
+.home_blocks .item .image{
+    height: 270px;
+    background-size: cover !important;
+    background-position: center center !important;
+}
+.home_blocks .item .title{
+    background: #1b1b1b;
+    /* color: #dddddd; */
+    padding: 10px;
+    height: 50px;
+    transition: all 500ms ease-in-out;
+}
+.home_blocks .item:hover .title{
+    transform:  translate(0px , -39px);
+    transition: all 500ms ease-in-out;
+}
+.home_blocks .item .title a{
+    color: #fff;
+}
+
+.home_blocks .item.lg{
+    animation-delay: 200ms !important;
+}
+.home_blocks .item.md{
+    animation-delay: 500ms !important;
+}
+.home_blocks .item.sm{
+    animation-delay: 800ms !important;
+}
+
+.home_blocks .item .veil{
+    background: #1f1f1f;
+    opacity: .7;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all 500ms ease-in-out; 
+}
+.home_blocks .item:hover .veil{
+    opacity: 0;
+    transition: opacity 500ms ease-in-out; 
+}
+
+
+/*=============================================
+                Team Poll CSS
+==============================================*/
+.home_poll{
+    text-align: center;
 }
