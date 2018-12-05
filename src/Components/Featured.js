@@ -11,7 +11,7 @@ export const sliderSettings = {
 }
 
 export const generateSlides = ({ Slides }) => {
-    console.log(Slides);
+    // console.log(Slides);
     if (Slides) {
         return (
             <Slider {...sliderSettings}>
@@ -37,7 +37,7 @@ export const generateSlides = ({ Slides }) => {
 }
 
 const Featured = (props) => {
-    console.log(props);
+    // console.log(props);
     return (
         <div>
             {generateSlides(props)}

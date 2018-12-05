@@ -14,7 +14,7 @@ class Poll extends Component {
             method: 'GET'
         }).then(res => res.json())
             .then(json => {
-                console.log(json);
+                // console.log(json);
                 this.setState({
                     pollTeams: json
                 });
@@ -25,20 +25,33 @@ class Poll extends Component {
         this.fetchPolls();
     }
 
-    randerPolls = () => {
+    addVote=(votes, index)=>{
+        fetch(`${URL_HOME}/${index}` , {
+            method: 'PATCH',
+            headers: {
+                'Accept' : 'application/json',
+                'Content-type' : 'application/json'
+            },
+            body: JSON.stringify({count: votes + 1})
+        }).then(()=>{
+            this.fetchPolls();
+        })
+        
+    }
 
+    randerPolls(){
+        const position = ['1ST','2ND','3RD'];
         if (this.state.pollTeams) {
-            return this.state.pollTeams.map((item) => {
+            return this.state.pollTeams.map((item,index) => {
                 return (
-                    <div key={item.id} className='poll_items'>
+                    <div key={item.id} className='poll_items' onClick={()=>this.addVote(item.count, item.id)}>
                         <img alt={item.name} src={`/images/teams/${item.logo}`} />
+                        <h4>{position[index]}</h4>
                         <div>{item.count} : Votes</div>
                     </div>
                 )
             })
         }
-
-
     }
     render() {
         return (

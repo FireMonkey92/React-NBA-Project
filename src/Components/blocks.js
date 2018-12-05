@@ -27,7 +27,7 @@ const populateBlocks = ({ blocks }) => {
 }
 
 const Blocks = (props) => {
-    console.log(props)
+    // console.log(props)
     return (
         <div className='home_blocks'>
             {populateBlocks(props)}

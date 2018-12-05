@@ -225,4 +225,101 @@ footer{
 ==============================================*/
 .home_poll{
     text-align: center;
+    /* width: 70%; */
+    margin: 0 auto; 
+}
+
+.poll_container{
+    display: flex;
+    display: -ms-flex;
+    display: -webkit-flex;
+    min-width: 300px;
+}
+
+.poll_container .poll_items{
+    padding: 20px;
+    flex-grow: 1;
+    
+}
+
+.poll_container .poll_items img{
+    width: 80%;
+    background-size: cover;
+}
+
+.poll_container .poll_items div{
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 18px;
+}
+
+
+/*=============================================
+                Teams Component CSS
+==============================================*/
+
+.teams_component{
+    text-align: center;
+    margin:  0 auto;
+    min-height: 550px;
+}
+
+.teams_input{
+    text-align: center;
+    padding: 20px 0px;
+    background: #e6e6e6;
+}
+
+.teams_input input{
+    font-family: 'Roboto', sans-serif;
+    border-radius: 30px;
+    border: 1px solid lightgray;
+    color: #1b1b1b;
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+}
+.teams_input input:hover{
+    outline: none;
+}
+.teams_container span{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+}
+
+.teams_container .team_item{
+    width: 25%;
+    padding: 30px;
+    box-sizing: border-box;
+}
+.teams_container .team_item img{
+    width:  100%;
+}
+
+
+
+/*=============================================
+                FADE
+==============================================*/
+
+.fade-appear{
+    opacity: 0.01;
+}
+.fade-appear.fade-appear-active{
+    opacity: 1;
+    transition: all .5s ease-in;
+}
+.fade-enter {
+    opacity: 0.01;
+}
+.fade-enter.fade-enter-active{
+    opacity: 1;
+    transition: all .5s ease-in;
+}
+.fade-leave{
+    opacity: 1;
+}
+.fade-leave.fade-leave-active{
+    opacity: 0.01;
+    transition: all .5s ease-in;
 }

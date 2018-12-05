@@ -5,6 +5,7 @@ import Subscription from './subscription';
 import Blocks from './blocks'
 import Polls from './poll'
 
+
 const API_URL_HOME = "http://localhost:3004/home";
 
 class Home extends Component {
