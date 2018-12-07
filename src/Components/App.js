@@ -8,7 +8,7 @@ import Header from './header'
 import Footer from './footer'
 import Home from './home';
 import Teams from './teams'
-
+import TeamDetails from './teamDetails';
 
 class App extends Component {
 
@@ -19,7 +19,8 @@ class App extends Component {
         <div>
           <Header/>
           <Route exact path='/' component={Home}></Route>
-          <Route path='/teams' component={Teams}></Route>
+          <Route exact path='/teams' component={Teams}></Route>
+          <Route exact path='/teams/:id' component={TeamDetails}></Route>
           <Footer/>
         </div>
         </BrowserRouter>

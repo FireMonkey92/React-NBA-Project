@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 const URL_HOME = 'http://localhost:3004/teams';
 
 class Poll extends Component {
@@ -10,7 +9,7 @@ class Poll extends Component {
         }
     }
     fetchPolls() {
-        fetch(`${URL_HOME}?poll=true&sort=count&_order=desc`, {
+        fetch(`${URL_HOME}?poll=true&_sort=count&_order=desc`, {
             method: 'GET'
         }).then(res => res.json())
             .then(json => {

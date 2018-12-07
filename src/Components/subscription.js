@@ -12,29 +12,27 @@ export default class Subscription extends Component {
             error: false,
             success: false,
             isduplicate: false,
-            prevEmails: []
+            flag: false
         }
     }
     componentWillMount() {
         //debugger
-        fetch(URl_Email, {
-            method: 'GET'
-        }).then(res => res.json())
-            .then((json) => {
-                this.setState({
-                    prevEmails: json
-                })
-            })
+       
     }
 
 
     catchOnChangeInput = (event) => {
+
+        debugger
         this.setState({
             email: event.target.value
         }, () => {
             // console.log(this.state.email)
             // call back function
         });
+        this.checkIsDuplicate(event.target.value);
+
+        console.log(this.state.flag);
         //debugger
     }
 
@@ -53,35 +51,36 @@ export default class Subscription extends Component {
             this.setState({
                 error: false,
                 success: false,
-                isduplicate: false
+                isduplicate: false,
+                flag: false
             })
-        }, 4000);
+        }, 3000);
     }
 
 
-    checkIsDuplicate = (e) => {
-        //debugger
-        var data = [];
-        var prevEmails = this.state.prevEmails
-        console.log(prevEmails);
-
-        prevEmails.map((item) => {
-            data.push(item.email);
-        });
-
-        if (data.indexOf(e) === -1) {
-            this.setState({
-                isduplicate: false
-            });
-            return false
-        }
-        else if (data.indexOf(e) >= 0) {
-            this.setState({
-                isduplicate: true
-            });
-            return true
-        }
+    checkIsDuplicate=(e) => {
+        //debugger        
+        fetch(`${URl_Email}?email=${e}`, {
+            method: 'GET'
+        }).then(res => res.json())
+            .then((json) => {
+                
+                if(json.length>0){
+                    console.log('found')
+                    this.setState({
+                        flag: true,
+                        // isduplicate: true
+                    })
+                }else{
+                    console.log('Not found')
+                    this.setState({
+                        flag: false,
+                        // isduplicate: false
+                    })
+                }
+        })
     }
+
     handleSubmitEvent = (event) => {
         //debugger
         event.preventDefault();
@@ -90,8 +89,11 @@ export default class Subscription extends Component {
 
         //function to set state of isduplicate
         if (regex.test(email)) {
-            if (this.checkIsDuplicate(email)) {
+            if (this.state.flag) {
                 console.log('Please Enter Uniqe Email Address');
+                this.setState({
+                    flag: true,
+                })
             } else {
                 console.log('Unique')
                 this.saveSubscription(email);
@@ -99,13 +101,14 @@ export default class Subscription extends Component {
         }
         else {
             this.setState({
-                error: true
+                error: true,
+                flag:false
             })
         }
         this.clearMessages();
     }
 
-    saveSubscription = (email) => {
+    saveSubscription=(email)=>{
         fetch(URl_Email, {
             method: 'POST',
             headers: {
@@ -118,7 +121,8 @@ export default class Subscription extends Component {
                 this.setState({
                     email: '',
                     success: true,
-                    isduplicate: false
+                    isduplicate: false,
+                    flag: false
                 });
             })
     }
