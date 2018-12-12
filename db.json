@@ -63,44 +63,12 @@
         "title": "Memphis to the win",
         "link": "/matches"
       }
-    ],
-    "poll": [
-      {
-        "id": "p1",
-        "team": "Golden State",
-        "thumg": "ss",
-        "count": 2543
-      },
-      {
-        "id": "p1",
-        "team": "Cavaliers",
-        "thumg": "ss",
-        "count": 2544
-      },
-      {
-        "id": "p1",
-        "team": "New york",
-        "thumg": "ss",
-        "count": 2
-      }
     ]
   },
   "subcriptions": [
     {
       "email": "tanupatel92@gmail.com",
       "id": 1
-    },
-    {
-      "email": "tt@tt.com",
-      "id": 2
-    },
-    {
-      "email": "tt@tt.com",
-      "id": 3
-    },
-    {
-      "email": "tt@tt.com",
-      "id": 4
     }
   ],
   "teams": [
