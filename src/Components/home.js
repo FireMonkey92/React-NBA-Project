@@ -39,9 +39,9 @@ class Home extends Component {
                 <a rel="noopener noreferrer" href="market://details?id=com.vmoksha.biomag.3D.prod" target="_blank">com.vmoksha.biomag.3D.prod</a>
                 <br />
                 <br />
-                <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.vmoksha.biomag" target="_blank" rel="external">FROM BROWSER LINK com.vmoksha.biomag</a>
+                <a href="https://play.google.com/store/apps/details?id=com.vmoksha.biomag" target="_blank" rel="external">FROM BROWSER LINK com.vmoksha.biomag</a>
                 <br />
-                <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.vmoksha.biomag.3D.prod" target="_blank" rel="external">FROM BROWSER LINK com.vmoksha.biomag.3D.prod</a>
+                <a href="https://play.google.com/store/apps/details?id=com.vmoksha.biomag.3D.prod" target="_blank" rel="external">FROM BROWSER LINK com.vmoksha.biomag.3D.prod</a>
 
                 {/* <Featured Slides={this.state.home.slider}></Featured>
                 <Subscription></Subscription>
