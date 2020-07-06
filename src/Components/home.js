@@ -20,22 +20,33 @@ class Home extends Component {
         fetch(API_URL_HOME, {
             method: 'GET'
         })
-        .then(responce => responce.json())
-        .then(json => {
+            .then(responce => responce.json())
+            .then(json => {
                 //console.log(json);
                 this.setState({
                     home: json
                 });
             }
-        ).catch(err => new FetchError(err));
+            ).catch(err => new FetchError(err));
     }
     render() {
         return (
             <div>
-                <Featured Slides={this.state.home.slider}></Featured>
+
+                <br />
+                <a href="market://details?id=com.vmoksha.biomag" target="_blank">com.vmoksha.biomag</a>
+                <br />
+                <a href="market://details?id=com.vmoksha.biomag.3D.prod" target="_blank">com.vmoksha.biomag.3D.prod</a>
+                <br />
+                <br />
+                <a href="https://play.google.com/store/apps/details?id=com.vmoksha.biomag" target="_blank" rel="external">FROM BROWSER LINK com.vmoksha.biomag</a>
+                <br />
+                <a href="https://play.google.com/store/apps/details?id=com.vmoksha.biomag.3D.prod" target="_blank" rel="external">FROM BROWSER LINK com.vmoksha.biomag.3D.prod</a>
+
+                {/* <Featured Slides={this.state.home.slider}></Featured>
                 <Subscription></Subscription>
                 <Blocks blocks={this.state.home.blocks}/>
-                <Polls/>
+                <Polls/> */}
             </div>
         )
     }
@@ -45,7 +56,7 @@ export default Home;
 
 // Class that handles the error on Fetch Statement
 export class FetchError extends Error {
-    constructor(orig){
+    constructor(orig) {
         super(orig);
         this.message = "Fetch Error";
         // this.details = orig;

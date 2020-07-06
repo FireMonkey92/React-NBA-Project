@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import {BrowserRouter,Route} from 'react-router-dom'
+import { BrowserRouter, Route } from 'react-router-dom'
 
 
 // Components
@@ -12,18 +12,18 @@ import TeamDetails from './teamDetails';
 
 class App extends Component {
 
-  
+
   render() {
     return (
-        <BrowserRouter>
+      <BrowserRouter>
         <div>
-          <Header/>
+          <Header />
           <Route exact path='/' component={Home}></Route>
           <Route exact path='/teams' component={Teams}></Route>
           <Route exact path='/teams/:id' component={TeamDetails}></Route>
-          <Footer/>
+          <Footer />
         </div>
-        </BrowserRouter>
+      </BrowserRouter>
     );
   }
 }
