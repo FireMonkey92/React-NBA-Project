@@ -41,9 +41,7 @@ class Home extends Component {
             <div>
 
                 <OpenApp
-                    href="https://play.google.com/store/apps/details?id=com.helensys.biomag"
-                    android="intent://path/#Intent;scheme=biomag;package=com.helensys.biomag"
-                >
+                    href="https://play.google.com/store/apps/details?id=com.helensys.biomag">
                     Android App
                 </OpenApp>
                 <hr />
@@ -58,8 +56,16 @@ class Home extends Component {
                     href="https://www.instagram.com/p/tanesh018"
                     android={this.state.xgetAndroidDeepLink}>
                     Insta Link
-                    </OpenApp>
+                </OpenApp>
 
+                <div className="link" onClick={(e) => {
+                    const _this = this.state
+                    setTimeout(function () {
+                        window.location.replace(_this.xgetAndroidDeepLink);
+                    }, 1000);
+                }}>
+                    Check DeepLink Click
+                </div>
 
                 {/* 
                 <br />
