@@ -34,12 +34,12 @@ class Home extends Component {
             <div>
 
                 <br />
-                <a rel="noopener noreferrer" href="market://details?id=com.vmoksha.biomag" target="_blank">com.vmoksha.biomag</a>
+                <a rel="noopener noreferrer" href="market://details?id=com.helensys.biomag" target="_blank">com.helensys.biomag</a>
                 <br />
-                <a rel="noopener noreferrer" href="market://details?id=com.vmoksha.biomag.3D.prod" target="_blank">com.vmoksha.biomag.3D.prod</a>
+                <a rel="noopener noreferrer" href="market://details?com.vmoksha.biomag.3D.prod" target="_blank">com.vmoksha.biomag.3D.prod</a>
                 <br />
                 <br />
-                <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.vmoksha.biomag" target="_blank">FROM BROWSER LINK com.vmoksha.biomag</a>
+                <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.helensys.biomag" target="_blank">FROM BROWSER LINK com.helensys.biomag</a>
                 <br />
                 <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.vmoksha.biomag.3D.prod" target="_blank" >FROM BROWSER LINK com.vmoksha.biomag.3D.prod</a>
 
