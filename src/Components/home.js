@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import OpenApp from "react-open-app";
-
+import { getAndroidDeepLink, getIOSDeepLink } from "url-to-deep-link";
 // components
 // import Featured from './Featured';
 // import Subscription from './subscription';
@@ -14,7 +14,9 @@ class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            home: ''
+            home: '',
+            xgetAndroidDeepLink: getAndroidDeepLink('https://www.instagram.com/p/tanesh018'),
+            xgetIOSDeepLink: getIOSDeepLink('https://apps.apple.com/us/app/id1161699021')
         }
     }
 
@@ -32,6 +34,9 @@ class Home extends Component {
             ).catch(err => new FetchError(err));
     }
     render() {
+
+        console.log('xgetAndroidDeepLink', this.state.xgetAndroidDeepLink);
+        console.log('xgetIOSDeepLink', this.state.xgetIOSDeepLink);
         return (
             <div>
 
@@ -50,7 +55,8 @@ class Home extends Component {
                 <hr />
 
                 <OpenApp
-                    href="https://www.instagram.com/tanesh018">
+                    href="https://www.instagram.com/p/tanesh018"
+                    android={this.state.xgetAndroidDeepLink}>
                     Insta Link
                     </OpenApp>
 
