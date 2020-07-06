@@ -36,7 +36,9 @@ class Home extends Component {
             <div>
 
                 <OpenApp
-                    href="https://play.google.com/store/apps/details?id=com.helensys.biomag">
+                    href="https://play.google.com/store/apps/details?id=com.helensys.biomag"
+                    android="intent://path/#Intent;scheme=biomag;package=com.helensys.biomag"
+                >
                     Android App
                 </OpenApp>
                 <hr />
@@ -44,6 +46,13 @@ class Home extends Component {
                     href="https://apps.apple.com/us/app/id1161699021">
                     IOS App
                 </OpenApp>
+
+                <hr />
+
+                <OpenApp
+                    href="https://www.instagram.com/tanesh018">
+                    Insta Link
+                    </OpenApp>
 
 
                 {/* 
