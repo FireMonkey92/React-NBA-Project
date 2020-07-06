@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import OpenApp from "react-open-app";
+
 // components
 // import Featured from './Featured';
 // import Subscription from './subscription';
@@ -33,6 +35,18 @@ class Home extends Component {
         return (
             <div>
 
+                <OpenApp
+                    href="https://play.google.com/store/apps/details?id=com.helensys.biomag">
+                    Android App
+                </OpenApp>
+                <hr />
+                <OpenApp
+                    href="https://apps.apple.com/us/app/id1161699021">
+                    IOS App
+                </OpenApp>
+
+
+                {/* 
                 <br />
                 <a rel="noopener noreferrer" href="market://details?id=com.helensys.biomag" target="_blank">com.helensys.biomag</a>
                 <br />
@@ -41,7 +55,7 @@ class Home extends Component {
                 <br />
                 <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.helensys.biomag" target="_blank">FROM BROWSER LINK com.helensys.biomag</a>
                 <br />
-                <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.vmoksha.biomag.3D.prod" target="_blank" >FROM BROWSER LINK com.vmoksha.biomag.3D.prod</a>
+                <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.vmoksha.biomag.3D.prod" target="_blank" >FROM BROWSER LINK com.vmoksha.biomag.3D.prod</a> */}
 
                 {/* <Featured Slides={this.state.home.slider}></Featured>
                 <Subscription></Subscription>
