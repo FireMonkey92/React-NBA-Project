@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 // components
-import Featured from './Featured';
-import Subscription from './subscription';
-import Blocks from './blocks'
-import Polls from './poll'
+// import Featured from './Featured';
+// import Subscription from './subscription';
+// import Blocks from './blocks'
+// import Polls from './poll'
 
 
 const API_URL_HOME = "http://localhost:3004/home";
@@ -34,14 +34,14 @@ class Home extends Component {
             <div>
 
                 <br />
-                <a href="market://details?id=com.vmoksha.biomag" target="_blank">com.vmoksha.biomag</a>
+                <a rel="noopener noreferrer" href="market://details?id=com.vmoksha.biomag" target="_blank">com.vmoksha.biomag</a>
                 <br />
-                <a href="market://details?id=com.vmoksha.biomag.3D.prod" target="_blank">com.vmoksha.biomag.3D.prod</a>
+                <a rel="noopener noreferrer" href="market://details?id=com.vmoksha.biomag.3D.prod" target="_blank">com.vmoksha.biomag.3D.prod</a>
                 <br />
                 <br />
-                <a href="https://play.google.com/store/apps/details?id=com.vmoksha.biomag" target="_blank" rel="external">FROM BROWSER LINK com.vmoksha.biomag</a>
+                <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.vmoksha.biomag" target="_blank" rel="external">FROM BROWSER LINK com.vmoksha.biomag</a>
                 <br />
-                <a href="https://play.google.com/store/apps/details?id=com.vmoksha.biomag.3D.prod" target="_blank" rel="external">FROM BROWSER LINK com.vmoksha.biomag.3D.prod</a>
+                <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.vmoksha.biomag.3D.prod" target="_blank" rel="external">FROM BROWSER LINK com.vmoksha.biomag.3D.prod</a>
 
                 {/* <Featured Slides={this.state.home.slider}></Featured>
                 <Subscription></Subscription>
