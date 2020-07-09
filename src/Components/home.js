@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import OpenApp from "react-open-app";
 import { getAndroidDeepLink, getIOSDeepLink } from "url-to-deep-link";
-import { browserName, CustomView } from 'react-device-detect';
+import { browserName } from 'react-device-detect';
 
 // components
 // import Featured from './Featured';
@@ -42,12 +42,12 @@ class Home extends Component {
         return (
             <div>
 
-                {/* <OpenApp
+                <OpenApp
                     href="https://play.google.com/store/apps/details?id=com.helensys.biomag">
                     Android App
                 </OpenApp>
                 <hr />
-                <OpenApp
+                {/* <OpenApp
                     href="https://apps.apple.com/us/app/id1161699021">
                     IOS App
                 </OpenApp>
