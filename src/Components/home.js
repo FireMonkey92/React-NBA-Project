@@ -71,7 +71,7 @@ class Home extends Component {
 
 
                 <br />
-                <a rel="noopener noreferrer" href="helenzys.com" target="_blank">helensys.com _blank </a>
+                <a rel="noopener noreferrer" href="https://helenzys.com" target="_blank">helensys.com _blank </a>
                 <br />
                 <a rel="noopener noreferrer" href="market://details?id=com.helensys.biomag" target="_self">com.helensys.biomag _self</a>
                 <br />
