@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import OpenApp from "react-open-app";
 import { getAndroidDeepLink, getIOSDeepLink } from "url-to-deep-link";
+import { browserName, CustomView } from 'react-device-detect';
+
 // components
 // import Featured from './Featured';
 // import Subscription from './subscription';
@@ -40,7 +42,7 @@ class Home extends Component {
         return (
             <div>
 
-                <OpenApp
+                {/* <OpenApp
                     href="https://play.google.com/store/apps/details?id=com.helensys.biomag">
                     Android App
                 </OpenApp>
@@ -65,19 +67,24 @@ class Home extends Component {
                     }, 1000);
                 }}>
                     Check DeepLink Click
-                </div>
+                </div> */}
 
-                {/* 
+
                 <br />
-                <a rel="noopener noreferrer" href="market://details?id=com.helensys.biomag" target="_blank">com.helensys.biomag</a>
+                <a rel="noopener noreferrer" href="helenzys.com" target="_blank">helensys.com _blank </a>
+                <br />
+                <a rel="noopener noreferrer" href="market://details?id=com.helensys.biomag" target="_self">com.helensys.biomag _self</a>
+                <br />
+                <a rel="noopener noreferrer" href="market://details?id=com.helensys.biomag" target="">com.helensys.biomag</a>
                 <br />
                 <a rel="noopener noreferrer" href="market://details?com.vmoksha.biomag.3D.prod" target="_blank">com.vmoksha.biomag.3D.prod</a>
                 <br />
                 <br />
                 <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.helensys.biomag" target="_blank">FROM BROWSER LINK com.helensys.biomag</a>
                 <br />
-                <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.vmoksha.biomag.3D.prod" target="_blank" >FROM BROWSER LINK com.vmoksha.biomag.3D.prod</a> */}
-
+                <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.vmoksha.biomag.3D.prod" target="_blank" >FROM BROWSER LINK com.vmoksha.biomag.3D.prod</a>
+                <br />
+                BrowserName :  {browserName}
                 {/* <Featured Slides={this.state.home.slider}></Featured>
                 <Subscription></Subscription>
                 <Blocks blocks={this.state.home.blocks}/>

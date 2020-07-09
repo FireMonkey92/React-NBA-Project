@@ -5,6 +5,7 @@
   "dependencies": {
     "animate.css": "^3.7.0",
     "react": "^16.6.3",
+    "react-device-detect": "^1.13.1",
     "react-dom": "^16.6.3",
     "react-open-app": "^1.0.2",
     "react-reveal": "^1.2.2",
