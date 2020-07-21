@@ -99,7 +99,8 @@ class Home extends Component {
                     REDIRECT _self
                 </button>
                 <button onClick={() => {
-                    window.open('http://google.com', `_target`)
+                    window.location = 'http://www.google.com';
+                    // window.open('http://google.com', `_target`)
                 }}>
                     REDIRECT _self
                 </button>
