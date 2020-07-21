@@ -42,15 +42,18 @@ class Home extends Component {
         return (
             <div>
 
-                <OpenApp
-                    href="https://play.google.com/store/apps/details?id=com.helensys.biomag">
+                {/* <OpenApp
+                    href="https://play.google.com/store/apps/details?id=com.svaggregators.sugamvyapparTest&hl=en-GB&ah=WjGCjlrefAiZhXStWnLdS0Td6SQ">
                     Android App
                 </OpenApp>
                 <hr />
-                {/* <OpenApp
-                    href="https://apps.apple.com/us/app/id1161699021">
-                    IOS App
-                </OpenApp>
+
+
+                <OpenApp
+                    href={this.state.xgetAndroidDeepLink}>
+                    open insta
+                </OpenApp> */}
+                {/* 
 
                 <hr />
 
@@ -70,7 +73,7 @@ class Home extends Component {
                 </div> */}
 
 
-                <br />
+                {/* <br />
                 <a rel="noopener noreferrer" href="https://helenzys.com" target="_blank">helensys.com _blank </a>
                 <br />
                 <a rel="noopener noreferrer" href="market://details?id=com.helensys.biomag" target="_self">com.helensys.biomag _self</a>
@@ -83,12 +86,24 @@ class Home extends Component {
                 <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.helensys.biomag" target="_blank">FROM BROWSER LINK com.helensys.biomag</a>
                 <br />
                 <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.vmoksha.biomag.3D.prod" target="_blank" >FROM BROWSER LINK com.vmoksha.biomag.3D.prod</a>
-                <br />
-                BrowserName :  {browserName}
+                <br /> */}
+                {/* BrowserName :  {browserName} */}
                 {/* <Featured Slides={this.state.home.slider}></Featured>
                 <Subscription></Subscription>
                 <Blocks blocks={this.state.home.blocks}/>
                 <Polls/> */}
+
+                <button onClick={() => {
+                    window.open('http://google.com', `_self`)
+                }}>
+                    REDIRECT _self
+                </button>
+                <button onClick={() => {
+                    window.open('http://google.com', `_target`)
+                }}>
+                    REDIRECT _self
+                </button>
+                BrowserName :  {browserName}
             </div>
         )
     }
