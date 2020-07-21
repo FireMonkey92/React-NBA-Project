@@ -94,13 +94,13 @@ class Home extends Component {
                 <Polls/> */}
 
                 <button onClick={() => {
-                    window.open('http://google.com', `_self`)
+                    window.open('http://google.com', `_parent`)
                 }}>
-                    REDIRECT _self
+                    REDIRECT _parent
                 </button>
                 <button onClick={() => {
-                    window.location = 'http://www.google.com';
-                    // window.open('http://google.com', `_target`)
+                    // window.location = 'http://www.google.com';
+                    window.open('http://google.com', `_top`)
                 }}>
                     REDIRECT _self
                 </button>
