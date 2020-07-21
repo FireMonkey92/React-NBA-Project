@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import OpenApp from "react-open-app";
+// import OpenApp from "react-open-app";
 import { getAndroidDeepLink, getIOSDeepLink } from "url-to-deep-link";
 import { browserName } from 'react-device-detect';
 
