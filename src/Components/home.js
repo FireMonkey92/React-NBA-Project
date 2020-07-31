@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-// import OpenApp from "react-open-app";
-import { getAndroidDeepLink, getIOSDeepLink } from "url-to-deep-link";
+import OpenApp from "react-open-app";
 import { browserName } from 'react-device-detect';
 
 // components
@@ -9,50 +8,35 @@ import { browserName } from 'react-device-detect';
 // import Blocks from './blocks'
 // import Polls from './poll'
 
-
-const API_URL_HOME = "http://localhost:3004/home";
-
 class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
             home: '',
-            xgetAndroidDeepLink: getAndroidDeepLink('https://www.instagram.com/p/tanesh018'),
-            xgetIOSDeepLink: getIOSDeepLink('https://apps.apple.com/us/app/id1161699021')
         }
     }
 
     componentDidMount() {
-        fetch(API_URL_HOME, {
-            method: 'GET'
-        })
-            .then(responce => responce.json())
-            .then(json => {
-                //console.log(json);
-                this.setState({
-                    home: json
-                });
-            }
-            ).catch(err => new FetchError(err));
     }
     render() {
 
-        console.log('xgetAndroidDeepLink', this.state.xgetAndroidDeepLink);
-        console.log('xgetIOSDeepLink', this.state.xgetIOSDeepLink);
         return (
             <div>
 
-                {/* <OpenApp
-                    href="https://play.google.com/store/apps/details?id=com.svaggregators.sugamvyapparTest&hl=en-GB&ah=WjGCjlrefAiZhXStWnLdS0Td6SQ">
-                    Android App
+                <OpenApp
+                    href={'https://play.google.com/store/apps/details?id=com.sugamvyapparaggregators.sugamvyapparTest'}>
+                    open Android
                 </OpenApp>
                 <hr />
-
-
                 <OpenApp
-                    href={this.state.xgetAndroidDeepLink}>
-                    open insta
-                </OpenApp> */}
+                    href={'https://apps.apple.com/in/app/sygamvyappar/id1522412254'}>
+                    open IOS
+                </OpenApp>
+                <hr />
+                <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.sugamvyapparaggregators.sugamvyapparTest" target="_blank">Adndroid App Direct Link</a>
+                <hr />
+                <a rel="noopener noreferrer" href="https://apps.apple.com/in/app/sygamvyappar/id1522412254" target="_blank">IOS App Direct Link</a>
+                <hr />
                 {/* 
 
                 <hr />
@@ -93,17 +77,6 @@ class Home extends Component {
                 <Blocks blocks={this.state.home.blocks}/>
                 <Polls/> */}
 
-                <button onClick={() => {
-                    window.open('http://google.com', `_parent`)
-                }}>
-                    REDIRECT _parent
-                </button>
-                <button onClick={() => {
-                    // window.location = 'http://www.google.com';
-                    window.open('http://google.com', `_top`)
-                }}>
-                    REDIRECT _self
-                </button>
                 BrowserName :  {browserName}
             </div>
         )
